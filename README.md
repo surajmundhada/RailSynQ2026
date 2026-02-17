@@ -1,166 +1,111 @@
-# 👉 Live link: https://rail-anukriti-7u8e.vercel.app/
+# RailSynQ
 
+## AI-Powered Smart Train Traffic Optimizer
 
-# 🚆 RailSynQ – AI-Powered Smart Train Traffic Optimizer
-RailSynQ is an AI-powered decision-support system for Indian Railways section controllers.  
-It optimizes train precedence, crossings, and platform allocation to maximize throughput and minimize delays.
-
-The system combines Artificial Intelligence (Reinforcement Learning, Graph Neural Networks) and Operations Research (Constraint Optimization) to make fast, explainable, and adaptive scheduling decisions.
+**Live Demo:** https://railsynq.netlify.app/
 
 ---
 
-## 🎯 Goals
-- Enable real-time train scheduling (<1s response)
-- Provide explainable recommendations with reasoning
-- Simulate disruptions using a digital twin
-- Allow human-in-the-loop overrides with adaptive learning
-- Improve throughput, reduce congestion, and minimize delays
+## Overview
+
+RailSynQ is a decision-support system for railway section controllers.  
+It optimizes train precedence, crossings, and platform allocation to improve throughput and reduce delays.
+
+The system combines constraint optimization and machine learning components to support fast and explainable scheduling decisions.
 
 ---
 
-## 🌟 Core Features
-- 📍 **Live Dashboard** → Real-time train map, AI suggestions, KPIs
-- 🛠 **Simulation Mode** → Test disruption scenarios
-- 🧑‍✈️ **Human-in-the-Loop** → Controllers can override AI decisions
-- 📊 **Analytics & Reports** → Delay trends, throughput insights
-- 🤖 **Adaptive Learning** → Smarter decisions from past delays & overrides
+## Objectives
+
+- Enable near real-time train scheduling (<1s response)
+- Provide explainable optimization recommendations
+- Simulate operational disruptions (Digital Twin)
+- Support human-in-the-loop overrides
+- Reduce congestion and delay
 
 ---
 
-## 🏗 Tech Stack
+## Key Features
 
-**Backend:**
-- Python, FastAPI, Uvicorn
-- OR-Tools (Constraint Solver)
-- PyTorch + RLlib (Reinforcement Learning)
-- Graph Neural Networks (rail network topology learning)
+### Live Dashboard
+Real-time train visualization, optimization suggestions, and KPIs.
 
-**Frontend:**
+### Simulation Mode
+Test disruption scenarios and operational constraints.
+
+### Manual Overrides
+Allow controllers to modify system decisions.
+
+### Analytics & Reports
+Delay trends and throughput insights.
+
+### Adaptive Optimization
+Improves decisions using historical performance data.
+
+---
+
+## Tech Stack
+
+### Backend
+- Python
+- FastAPI
+- Uvicorn
+- OR-Tools
+- PyTorch
+- RLlib
+
+### Frontend
 - React (Vite)
 - TailwindCSS
-- Shadcn/UI (compatible)
+- Shadcn/UI
 
-**Database:**
-- SQLite by default (development) – `backend/app/rail.db`
-- Optional: PostgreSQL/TimescaleDB for time-series at scale
-
-**Infra/Runtime:**
-- WebSockets (real-time updates)
-- Local dev via Vite + Uvicorn
+### Database
+- SQLite (default)
+- PostgreSQL / TimescaleDB (optional)
 
 ---
 
-## 📂 Repository Structure
-```text
+## Project Structure
+
 RailSynQ/
-│── backend/
-│   ├── app/
-│   │   ├── main.py                 # FastAPI app factory + routes mount
-│   │   ├── api/
-│   │   │   └── routes/
-│   │   │       ├── ingest.py
-│   │   │       ├── optimizer.py
-│   │   │       ├── simulator.py
-│   │   │       ├── overrides.py
-│   │   │       ├── users.py
-│   │   │       ├── reports.py
-│   │   │       └── ws.py
-│   │   ├── core/
-│   │   │   └── config.py
-│   │   ├── db/
-│   │   │   ├── models.py
-│   │   │   ├── session.py
-│   │   │   └── init_timescaledb.sql
-│   │   ├── services/
-│   │   │   ├── optimizer.py
-│   │   │   └── simulator.py
-│   │   └── rail.db                 # SQLite dev database
-│   ├── requirements.txt
-│   └── uvicorn_app.py              # Uvicorn entrypoint
-│
-│── frontend/
-│   ├── index.html
-│   ├── package.json
-│   ├── src/
-│   │   ├── main.tsx
-│   │   ├── index.css
-│   │   ├── lib/api.ts
-│   │   └── pages/
-│   │       ├── App.tsx
-│   │       ├── Dashboard.tsx
-│   │       ├── Home.tsx
-│   │       ├── Login.tsx
-│   │       ├── Reports.tsx
-│   │       ├── Simulation.tsx
-│   │       └── Settings.tsx
-│   └── vite.config.ts
-│
-│── README.md
-```
+├── backend/
+├── frontend/
+├── README.md
+└── LICENSE
 
 ---
 
-## 🚀 Getting Started
+## Running Locally
 
-### 1️⃣ Clone the repo
-```bash
-git clone https://github.com/sonamnimje/QueueSyncRail.git
+### Clone the Repository
+
+git clone https://github.com/surajmundhada/RailSynQ.git
+
 cd RailSynQ
-```
 
-### 2️⃣ Backend Setup
-```bash
+### Backend Setup
+
 cd backend
 pip install -r requirements.txt
-# Option A: run via module path
 uvicorn app.main:app --reload
-# Option B: use helper (same effect)
-python uvicorn_app.py
-```
 
-### 3️⃣ Frontend Setup
-```bash
+### Frontend Setup
+
 cd frontend
 npm install
 npm run dev
-```
-
-### 4️⃣ Database Setup
-Development defaults to SQLite at `backend/app/rail.db`. No action needed.
-
-For PostgreSQL/TimescaleDB (optional), use `backend/app/db/init_timescaledb.sql` as a starting point.
-
-### 5️⃣ Run order (local)
-1. Start backend (see step 2)
-2. Start frontend
-```bash
-cd frontend
-npm run dev
-```
 
 ---
 
-## 📊 Example Use Cases
+## Team
 
-- ✅ Prioritize express trains over goods during peak hours
-- ✅ Simulate track maintenance disruptions in digital twin
-- ✅ Allocate platforms optimally at busy junctions
-- ✅ Adapt schedules when human controllers override
-
----
-
-## 🤝 Team RailSynQ
-
-- 🚆 Backend AI/Optimization: Sonam Nimje, Shreya Saraf
-- 🖥 Frontend/UI: Sameeksha Vishwakarma
-- 🗄 Database & Infra: Riya Saraf
-- 📊 Simulation & Reports: Palak Singh, Richa Singh
+- Suraj Mundhada – Backend Optimization
+- Yash Agiwal – Frontend
+- Pranav Navandar – Database & Infrastructure
+- Shubham Soni – Simulation & Reports
 
 ---
 
-## 📜 License
+## License
 
-MIT License – feel free to use and adapt for research & development.
-
----
-
+MIT License
