@@ -79,7 +79,7 @@ RailSynQ/
 
 ### Clone the Repository
 
-git clone https://github.com/surajmundhada/RailSynQ.git
+git clone https://github.com/surajmundhada/RailSynQ2026.git
 
 cd RailSynQ
 
