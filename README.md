@@ -2,7 +2,7 @@
 
 ## AI-Powered Smart Train Traffic Optimizer
 
-**Live Demo:** https://railsynq.netlify.app/
+**Live Demo:** https://railsynq2026.netlify.app/
 
 ---
 
