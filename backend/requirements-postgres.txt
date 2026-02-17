@@ -1,0 +1,5 @@
+# PostgreSQL support. Use with Python 3.11 or 3.12 (asyncpg has no 3.13 wheel).
+# Install after requirements.txt: pip install -r requirements-postgres.txt
+asyncpg==0.29.0
+psycopg[binary,pool]>=3.2.2
+databases[postgresql]==0.9.0
